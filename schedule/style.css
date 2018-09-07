@@ -1,0 +1,34 @@
+body{
+        background-color: darksalmon;
+        text-align:  center;
+}
+
+table{
+    width: 75%;
+    margin:auto;
+    font-size: 2.2em;
+    color:brown;
+}
+
+td{
+    border-right: 5px outset #2F24A7;
+    border-left: 4px outset #2A79G7;
+    
+}
+th{
+    border-bottom: inset #25A22A 3px;
+    padding: 7px   /*文字與邊框距離*/
+}
+/*td:nth-child(even){
+    background-color: cornsilk
+}
+td:nth-child(odd){
+    background-color: darkorange
+}*/
+td.odd{
+    background-color: aliceblue
+}
+td.even{
+    /* border-bottom: 2px dashed brown; */
+    background-color: lightgoldenrodyellow;
+}
