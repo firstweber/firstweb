@@ -1,0 +1,111 @@
+body{
+    background-image: url(images/bird.png);
+    background-size: 10%;
+    background-repeat:repeat-x;
+}
+
+
+#min{
+    border-radius: 10px 20px;
+    background-color: aqua;
+    width: 1000px;
+    height: 900px;
+    box-shadow: 15px 10px 15px brown;
+    background-image: url(images/grass_blue_sky_background.jpg);
+}
+#sun{
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color:yellow;
+    transform:translate(70px,10px)
+    border: 5px solid lightyellow;
+    box-shadow: 10px 10px 60px lightyellow;
+    transition: 2s;
+}
+
+#sun:hover{
+    width: 500px;
+    height: 500px;
+    background-color: greenyellow;
+    background-image: url(images/cow.png);
+    background-size: 150%;
+    box-shadow: 20px 20px 50px gray;
+}
+
+#bird{
+    border-radius: 10px;
+    width: 120px;
+    height: 120px;
+    background-size: 120px 130px;
+    background-image: url(images/bird.png);
+    transform: rotate(0deg) translate(-10px,70px);
+    position: relative;
+    animation-name: angry;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    animation-timing-function:ease-in-out;
+}
+#cow{
+    width: 400px;
+    height: 270px;
+    background-image: url(images/cow.png);
+    background-size: 100%;
+    transform: translate(30px,150px);
+    
+}
+img{
+    border-radius: 0px;
+    width: 400px;
+    height: 200px;
+    box-shadow: 10px 10px 50px gray;
+    transform: translate(1000px,5550px);
+    position: absolute;
+    top:140px;
+    left:20px;
+
+}
+#nest{
+    width: 150px;
+    height: 150px;
+    background-image:url(images/nest.png);
+    background-size: 100%;
+    transform:translate(40px,160px);    
+}
+
+#wood{
+    width: 250px;
+    height: 300px;
+    background-size: 120%;
+    background-image: url(images/lookout_tower.png);
+    transform: translate(650px,-120px);
+}
+
+#mill{
+    width: 280px;
+    height: 250px;
+    transform: translate(260px,130px);
+    position: absolute;
+    top:250px;
+    left: 650px;
+    transition: 2s;
+}
+#mill:hover{
+    width: 80px;
+    height: 50px;
+    transform: translate(260px,130px);
+    position: absolute;
+    top: 360px;
+    left: 770px;
+}
+@keyframes angry {
+    0%{background-image: url(images/bird.png);left:5px;top:50px;}
+    25%{background-image: url(images/cow.png);left:250px;top:50px;width: 320px;height: 200px;background-size: 100%}
+    50%{background-image:url(images/nest.png);left:800px;top:50px;}
+    75%{background-image: url(images/cow.png);left:450px;top:250px;width: 320px;height: 200px;background-size: 100%}
+    100%{background-image: url(images/bird.png);left:5px;top:50px;}
+}
+
+
+
+

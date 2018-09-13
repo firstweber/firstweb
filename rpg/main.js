@@ -5,29 +5,30 @@ var imgMountain, imgMain, imgEnemy;
 // currentImgMainX currentImgMainY: 決定主角所在座標
 //imgMountain imgMain imgEnemy: 障礙物 主角 敵人的圖片物件
 
-//當網頁元件載入完成後要做的事情
-$(document).ready(function(){ 
-    //遊戲地形設定 0: 可走 1: 障礙 2: 終點 3: 敵人
-    mapArray= [0,1,1,0,0,0,3,1,2]; // 存放資料
-    ctx= $("#myCanvas")[0].getContext("2d"); //一般平面繪圖
-    
-    imgMain= new Image(); //擺上主角位置 使用預設位置
-    imgMain.src= "rpg/images/spriteSheet.png";
+//當網頁元件載入完成後要做的事情(避免事件比 window 先執行出現錯誤);
+// document=> 當網頁載入時 會出現一個window(object)文件 此文件為document; 
+$(document).ready(function(){ //what is document.ready ? JQ 語法所使用 與網頁載入有關可使用;
+    //遊戲地形設定 0: 可走 1: 障礙 2: 終點 3: 敵人;
+    mapArray= [0,1,1,0,0,0,3,1,2]; // 存放資料 array's size = length ? yes,3*3=九宮格 4*4=16格;
+    ctx= $("#myCanvas")[0].getContext("2d"); //一般平面繪圖 在canvas 所製造的框架中繪製("2D")圖;
+    // canvas will cover the other(object,script) disappear or not ?
+    imgMain= new Image(); //擺上主角位置 使用預設位置;
+    imgMain.src= "rpg/images/spritesheet.png";
     currentImgMainX= 0;
     currentImgMainY= 0;
-    imgMain.onload= function() //主角圖片載入後執行下面函數
+    imgMain.onload= function() //主角圖片載入後執行下面函數;
     { //ctx.drawImage(圖片位置,圖片裁切起始點:0 0 寬高:80,130 放置位子 currentX,Y,200,200 )
         ctx.drawImage(imgMain,0,0,80,130,currentImgMainX,currentImgMainY,200,200);
     }
-    imgMountain= new Image();//障礙物圖片物件
+    imgMountain= new Image();//障礙物圖片物件;
     imgMountain.src= "rpg/images/material.png";
-    imgEnemy= new Image();//敵人圖片物件
-    imgEnemy.src= "rpg/images/Enemy.png";
-    imgMountain.onload= function(){
+    imgEnemy= new Image();//敵人圖片物件;
+    imgEnemy.src= "rpg/images/enemy.png";
+    imgMountain.onload= function(){ //onload & ready? onload為JavaScript原始語法本質與JQ.ready一樣;
         imgEnemy.onload=function(){
         for(var x in mapArray)
         {
-            if(mapArray[x]==1)//擺上障礙物
+            if(mapArray[x]==1)//擺上障礙物;
                 {                                       //x轉成座標
                 ctx.drawImage(imgMountain,256,190,33,35,x%3*200,Math.floor(x/3)*200,200,200);
                 }
